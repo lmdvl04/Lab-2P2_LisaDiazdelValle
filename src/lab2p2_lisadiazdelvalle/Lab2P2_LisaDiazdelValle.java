@@ -20,6 +20,7 @@ public class Lab2P2_LisaDiazdelValle {
      */
     public static void main(String[] args) {
         ArrayList user = new ArrayList();
+        ArrayList registro = new ArrayList();
 
         int opcion = 0;
         do {
@@ -33,6 +34,26 @@ public class Lab2P2_LisaDiazdelValle {
 
             switch (opcion) {
                 case 1: {
+                    int op3 = 0;
+                    do {
+                        System.out.println("1. Crear");
+                        System.out.println("2. Listar");
+                        System.out.println("3. Modificar");
+                        System.out.println("4. Borrar");
+                        System.out.println("5. Vender");
+                        System.out.println("6. Volver");
+                        System.out.println("Ingrese la opcion: ");
+                        op3 = leer.nextInt();
+                        
+                        switch(op3){
+                            case 1:{
+                                
+                            }break;
+                        }
+                        
+                        
+
+                    } while (op3 != 6);
 
                 }
                 break;
@@ -41,10 +62,10 @@ public class Lab2P2_LisaDiazdelValle {
                 }
                 break;
                 case 3: {
-                    String nombre= "";
-                    int edad= 0;
-                    String username="";
-                    String pass="";
+                    String nombre = "";
+                    int edad = 0;
+                    String username = "";
+                    String pass = "";
                     Usuarios u = new Usuarios(nombre, edad, username, pass);
                     int op2 = 0;
                     do {
@@ -73,7 +94,6 @@ public class Lab2P2_LisaDiazdelValle {
                                 pass = leer.next();
                                 user.add(username);
                                 user.add(pass);
-                               
 
                             }
                             break;

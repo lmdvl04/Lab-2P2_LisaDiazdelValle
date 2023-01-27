@@ -87,6 +87,11 @@ public class casa {
     public void setCuartos(int cuartos) {
         this.cuartos = cuartos;
     }
+
+    @Override
+    public String toString() {
+        return "casa{" + "numcasa=" + numcasa + ", bloque=" + bloque + ", color=" + color + ", ancho=" + ancho + ", largo=" + largo + ", banos=" + banos + ", cuartos=" + cuartos + '}';
+    }
     
     
 }
