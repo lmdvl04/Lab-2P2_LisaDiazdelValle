@@ -18,9 +18,8 @@ public class Lab2P2_LisaDiazdelValle {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        int opcion;
-
-        do {
+        int opcion = 0;
+        while (opcion != 8) {
             System.out.println("---MENU---");
             System.out.println("1. Registro de inmueble/solar");
             System.out.println("2. Manejo de estados");
@@ -31,8 +30,9 @@ public class Lab2P2_LisaDiazdelValle {
 
             switch (opcion) {
             }
-        } while (opcion !=4);
-    }// fin while
+        }// fin while
+    }//fin del main
+    
     
 
 }
