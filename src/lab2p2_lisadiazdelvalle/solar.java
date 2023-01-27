@@ -9,15 +9,19 @@ package lab2p2_lisadiazdelvalle;
  * @author HTS
  */
 public class solar {
+
     private int largo;
     private int ancho;
-    
-    public solar(){
-        
+    private int area;
+
+    public solar() {
+
     }
-    public solar(int largo, int ancho){
-        this.ancho=ancho;
-        this.largo=largo;
+
+    public solar(int largo, int ancho, int area) {
+        this.ancho = ancho;
+        this.largo = largo;
+        this.area = area;
     }
 
     public int getLargo() {
@@ -36,9 +40,17 @@ public class solar {
         this.ancho = ancho;
     }
 
+    public int getArea() {
+        return area;
+    }
+
+    public void setArea(int area) {
+        this.area = area;
+    }
+
     @Override
     public String toString() {
-        return "solar{" + "largo=" + largo + ", ancho=" + ancho + '}';
+        return "solar{" + "largo=" + largo + ", ancho=" + ancho + ", area=" + area + '}';
     }
-    
+
 }
