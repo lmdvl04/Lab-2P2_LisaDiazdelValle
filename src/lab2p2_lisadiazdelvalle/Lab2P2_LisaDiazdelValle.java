@@ -90,6 +90,7 @@ public class Lab2P2_LisaDiazdelValle {
                                     System.out.println("3. Listar solares");
                                     System.out.println("4. Volver");
                                     System.out.println("Ingrese opcion: ");
+                                    menuListar = leer.nextInt();
 
                                     switch (menuListar) {
                                         case 1: {
@@ -121,9 +122,73 @@ public class Lab2P2_LisaDiazdelValle {
                                             }
                                             System.out.println(listasolar);
                                         }
+                                        break;
+                                        default: {
+                                            System.out.println("Opcion no valida");
+                                        }break;
                                     }
                                 } while (menuListar != 4); //fin while menu listar
                             }
+                            break;
+                            case 3: {
+                                int menuModificar = 0;
+                                do {
+                                    System.out.println("---LISTAR---");
+                                    System.out.println("1. Modificar casas");
+                                    System.out.println("2. Modificar edificios");
+                                    System.out.println("3. Modificar solares");
+                                    System.out.println("4. Volver");
+                                    System.out.println("Ingrese opcion: ");
+                                    menuModificar = leer.nextInt();
+
+                                    switch (menuModificar) {
+                                        case 1: {
+                                            int menuMod = 0;
+                                            System.out.println(registro);
+                                            System.out.println("Posicion a modificar: ");
+                                            int posicion = leer.nextInt();
+                                            do {
+                                                System.out.println("---QUE QUIERE MODIFICAR?---");
+                                                System.out.println("1. Numera de casa");
+                                                System.out.println("2. Numero de bloque");
+                                                System.out.println("3. Color");
+                                                System.out.println("4. Ancho");
+                                                System.out.println("5. Largo");
+                                                System.out.println("6. Banos");
+                                                System.out.println("7. Cuartos");
+                                                System.out.println("8. Volver");
+                                                System.out.println("Elija la opcion: ");
+                                                menuMod = leer.nextInt();
+
+                                                switch (menuMod) {
+                                                    case 1: {
+
+                                                    }
+                                                    break;
+                                                    case 2: {
+
+                                                    }
+                                                    break;
+                                                    case 3: {
+                                                        if (posicion >= 0 & posicion < registro.size()) {
+                                                            if (registro.get(posicion) instanceof casa && posicion >= 0 && posicion < registro.size()) {
+                                                                ((casa) registro.get(posicion)).setColor(JColorChooser.showDialog(null, "Selecciona color", ((casa) registro.get(posicion)).getColor()));
+                                                            } else {
+                                                                System.out.println("La posicion entregada no es valida");
+                                                            }
+                                                        }
+                                                    }
+                                                    break;
+                                                }
+
+                                            } while (menuMod != 8);//fin while menu que quiere modificar
+                                        }
+                                        break;
+                                    }
+
+                                } while (menuModificar != 4);//fin while menu modificar
+                            }
+                            break;
                         }
                     } while (op3 != 6); //fin while menu registro                    
                 }
@@ -194,6 +259,7 @@ public class Lab2P2_LisaDiazdelValle {
         numCasa = leer.nextInt();
         System.out.println("Ingrese el bloque de casa: ");
         numBloque = leer.nextInt();
+        System.out.println("Ingrese el color: ");
         color = JColorChooser.showDialog(null, "Seleccione color: ", Color.black);
         System.out.println("Ingrese el ancho: ");
         Ancho = leer.nextInt();
