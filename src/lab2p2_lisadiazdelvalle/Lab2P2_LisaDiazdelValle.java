@@ -116,7 +116,7 @@ public class Lab2P2_LisaDiazdelValle {
                                         case 3: {
                                             String listasolar = "";
                                             for (Object solar : registro) {
-                                                if (solar instanceof edificio) {
+                                                if (solar instanceof solar) {
                                                     listasolar += "" + registro.indexOf(solar) + " - " + solar + "\n";
                                                 }
                                             }
@@ -125,7 +125,8 @@ public class Lab2P2_LisaDiazdelValle {
                                         break;
                                         default: {
                                             System.out.println("Opcion no valida");
-                                        }break;
+                                        }
+                                        break;
                                     }
                                 } while (menuListar != 4); //fin while menu listar
                             }
@@ -162,9 +163,17 @@ public class Lab2P2_LisaDiazdelValle {
 
                                                 switch (menuMod) {
                                                     case 1: {
+                                                        if (posicion >= 0 & posicion < registro.size()) {
+                                                            if (registro.get(posicion) instanceof casa && posicion >= 0 && posicion < registro.size()) {
+                                                                ((casa) registro.indexof(posicion)).setNumcasa();
+                                                            } else {
+                                                                System.out.println("La posicion entregada no es valida");
 
+                                                            }
+                                                        }
                                                     }
                                                     break;
+
                                                     case 2: {
 
                                                     }
