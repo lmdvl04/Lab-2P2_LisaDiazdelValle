@@ -21,7 +21,7 @@ public class Lab2P2_LisaDiazdelValle {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        ArrayList user = new ArrayList();
+        ArrayList<Usuarios> user = new ArrayList();
         ArrayList registro = new ArrayList();
 
         int opcion = 0;
@@ -97,7 +97,7 @@ public class Lab2P2_LisaDiazdelValle {
                                             String listacasas = "";
                                             for (Object casas : registro) {
                                                 if (casas instanceof casa) {
-                                                    listacasas += "" + registro.indexOf(casas) + " - " + casas + "\n";
+                                                    listacasas += "" + registro.indexOf(casas) + " : " + casas + "\n";
                                                 }
                                             }
                                             System.out.println(listacasas);
@@ -107,7 +107,7 @@ public class Lab2P2_LisaDiazdelValle {
                                             String listaedificio = "";
                                             for (Object edificio : registro) {
                                                 if (edificio instanceof edificio) {
-                                                    listaedificio += "" + registro.indexOf(edificio) + " - " + edificio + "\n";
+                                                    listaedificio += "" + registro.indexOf(edificio) + " : " + edificio + "\n";
                                                 }
                                             }
                                             System.out.println(listaedificio);
@@ -117,7 +117,7 @@ public class Lab2P2_LisaDiazdelValle {
                                             String listasolar = "";
                                             for (Object solar : registro) {
                                                 if (solar instanceof solar) {
-                                                    listasolar += "" + registro.indexOf(solar) + " - " + solar + "\n";
+                                                    listasolar += "" + registro.indexOf(solar) + " : " + solar + "\n";
                                                 }
                                             }
                                             System.out.println(listasolar);
@@ -134,7 +134,7 @@ public class Lab2P2_LisaDiazdelValle {
                             case 3: {
                                 int menuModificar = 0;
                                 do {
-                                    System.out.println("---LISTAR---");
+                                    System.out.println("---MODIFICAR---");
                                     System.out.println("1. Modificar casas");
                                     System.out.println("2. Modificar edificios");
                                     System.out.println("3. Modificar solares");
@@ -165,7 +165,9 @@ public class Lab2P2_LisaDiazdelValle {
                                                     case 1: {
                                                         if (posicion >= 0 & posicion < registro.size()) {
                                                             if (registro.get(posicion) instanceof casa && posicion >= 0 && posicion < registro.size()) {
-                                                                ((casa) registro.indexof(posicion)).setNumcasa();
+                                                                System.out.println("Ingrese el nuevo numero de la casa");
+                                                                int newnum = leer.nextInt();
+                                                                ((casa) registro.get(posicion)).setNumcasa(newnum);
                                                             } else {
                                                                 System.out.println("La posicion entregada no es valida");
 
@@ -175,7 +177,15 @@ public class Lab2P2_LisaDiazdelValle {
                                                     break;
 
                                                     case 2: {
-
+                                                        if (posicion >= 0 & posicion < registro.size()) {
+                                                            if (registro.get(posicion) instanceof casa && posicion >= 0 && posicion < registro.size()) {
+                                                                System.out.println("Ingrese el nuevo numero de bloque");
+                                                                int newnum = leer.nextInt();
+                                                                ((casa) registro.get(posicion)).setBloque(newnum);
+                                                            } else {
+                                                                System.out.println("La posicion entregada no es valida");
+                                                            }
+                                                        }
                                                     }
                                                     break;
                                                     case 3: {
@@ -188,14 +198,181 @@ public class Lab2P2_LisaDiazdelValle {
                                                         }
                                                     }
                                                     break;
+                                                    case 4: {
+                                                        if (posicion >= 0 & posicion < registro.size()) {
+                                                            if (registro.get(posicion) instanceof casa && posicion >= 0 && posicion < registro.size()) {
+                                                                System.out.println("Ingrese el nuevo ancho");
+                                                                int newnum = leer.nextInt();
+                                                                ((casa) registro.get(posicion)).setAncho(newnum);
+                                                            } else {
+                                                                System.out.println("La posicion entregada no es valida");
+                                                            }
+                                                        }
+                                                    }
+                                                    break;
+                                                    case 5: {
+                                                        if (posicion >= 0 & posicion < registro.size()) {
+                                                            if (registro.get(posicion) instanceof casa && posicion >= 0 && posicion < registro.size()) {
+                                                                System.out.println("Ingrese el nuevo largo");
+                                                                int newnum = leer.nextInt();
+                                                                ((casa) registro.get(posicion)).setLargo(newnum);
+                                                            } else {
+                                                                System.out.println("La posicion entregada no es valida");
+                                                            }
+                                                        }
+                                                    }
+                                                    break;
+                                                    case 6: {
+                                                        if (posicion >= 0 & posicion < registro.size()) {
+                                                            if (registro.get(posicion) instanceof casa && posicion >= 0 && posicion < registro.size()) {
+                                                                System.out.println("Ingrese el nuevo numero de banos");
+                                                                int newnum = leer.nextInt();
+                                                                ((casa) registro.get(posicion)).setBanos(newnum);
+                                                            } else {
+                                                                System.out.println("La posicion entregada no es valida");
+                                                            }
+                                                        }
+                                                    }
+                                                    break;
+                                                    case 7: {
+                                                        if (posicion >= 0 & posicion < registro.size()) {
+                                                            if (registro.get(posicion) instanceof casa && posicion >= 0 && posicion < registro.size()) {
+                                                                System.out.println("Ingrese el nuevo numero de cuartos");
+                                                                int newnum = leer.nextInt();
+                                                                ((casa) registro.get(posicion)).setCuartos(newnum);
+                                                            } else {
+                                                                System.out.println("La posicion entregada no es valida");
+                                                            }
+                                                        }
+                                                    }
+
                                                 }
 
-                                            } while (menuMod != 8);//fin while menu que quiere modificar
+                                            } while (menuMod != 8);//fin while menu que quiere modificar casa
+                                        }
+                                        break;
+                                        case 2: {
+                                            int menuMod = 0;
+                                            System.out.println(registro);
+                                            System.out.println("Posicion a modificar: ");
+                                            int posicion = leer.nextInt();
+                                            do {
+                                                System.out.println("---QUE QUIERE MODIFICAR?---");
+                                                System.out.println("1. Numera de pisos");
+                                                System.out.println("2. Cantidad de locales");
+                                                System.out.println("3. Dirreccion por referencia");
+                                                System.out.println("4. Volver");
+                                                System.out.println("Elija la opcion: ");
+                                                menuMod = leer.nextInt();
+
+                                                switch (menuMod) {
+                                                    case 1: {
+                                                        if (posicion >= 0 & posicion < registro.size()) {
+                                                            if (registro.get(posicion) instanceof edificio && posicion >= 0 && posicion < registro.size()) {
+                                                                System.out.println("Ingrese el nuevo numero de pisos");
+                                                                int newnum = leer.nextInt();
+                                                                ((edificio) registro.get(posicion)).setPisos(newnum);
+                                                            } else {
+                                                                System.out.println("La posicion entregada no es valida");
+                                                            }
+                                                        }
+                                                    }
+                                                    break;
+                                                    case 2: {
+                                                        if (posicion >= 0 & posicion < registro.size()) {
+                                                            if (registro.get(posicion) instanceof edificio && posicion >= 0 && posicion < registro.size()) {
+                                                                System.out.println("Ingrese la nuevan cantidad de locales");
+                                                                int newnum = leer.nextInt();
+                                                                ((edificio) registro.get(posicion)).setCantLocales(newnum);
+                                                            } else {
+                                                                System.out.println("La posicion entregada no es valida");
+                                                            }
+                                                        }
+                                                    }
+                                                    break;
+                                                    case 3: {
+                                                        if (posicion >= 0 & posicion < registro.size()) {
+                                                            if (registro.get(posicion) instanceof edificio && posicion >= 0 && posicion < registro.size()) {
+                                                                System.out.println("Ingrese la nuevan direccion");
+                                                                int newnum = leer.nextInt();
+                                                                ((edificio) registro.get(posicion)).setCantLocales(newnum);
+                                                            } else {
+                                                                System.out.println("La posicion entregada no es valida");
+                                                            }
+                                                        }
+                                                    }
+                                                    break;
+                                                }
+                                            } while (menuMod != 4);//fin menu que quiere edificio
+                                        }
+                                        break;
+                                        case 3: {
+                                            int menuMod = 0;
+                                            System.out.println(registro);
+                                            System.out.println("Posicion a modificar: ");
+                                            int posicion = leer.nextInt();
+                                            do {
+                                                System.out.println("---QUE QUIERE MODIFICAR?---");
+                                                System.out.println("1. Ancho");
+                                                System.out.println("2. Largo");
+                                                System.out.println("3. Volver");
+                                                System.out.println("Elija la opcion: ");
+                                                menuMod = leer.nextInt();
+
+                                                switch (menuMod) {
+                                                    case 1: {
+                                                        if (posicion >= 0 & posicion < registro.size()) {
+                                                            if (registro.get(posicion) instanceof solar && posicion >= 0 && posicion < registro.size()) {
+                                                                System.out.println("Ingrese el nuevo ancho");
+                                                                int newnum = leer.nextInt();
+                                                                ((solar) registro.get(posicion)).setAncho(newnum);
+                                                            } else {
+                                                                System.out.println("La posicion entregada no es valida");
+                                                            }
+                                                        }
+                                                    }
+                                                    break;
+                                                    case 2: {
+                                                        if (posicion >= 0 & posicion < registro.size()) {
+                                                            if (registro.get(posicion) instanceof solar && posicion >= 0 && posicion < registro.size()) {
+                                                                System.out.println("Ingrese el nuevo largo");
+                                                                int newnum = leer.nextInt();
+                                                                ((solar) registro.get(posicion)).setLargo(newnum);
+                                                            } else {
+                                                                System.out.println("La posicion entregada no es valida");
+                                                            }
+                                                        }
+                                                    }
+                                                    break;
+                                                    case 3: {
+                                                        if (posicion >= 0 & posicion < registro.size()) {
+                                                            if (registro.get(posicion) instanceof edificio && posicion >= 0 && posicion < registro.size()) {
+                                                                System.out.println("Ingrese la nuevan direccion");
+                                                                int newnum = leer.nextInt();
+                                                                ((edificio) registro.get(posicion)).setCantLocales(newnum);
+                                                            } else {
+                                                                System.out.println("La posicion entregada no es valida");
+                                                            }
+                                                        }
+                                                    }
+                                                    break;
+
+                                                }
+                                            } while (menuMod != 4);//fin menu que quiere solar
                                         }
                                         break;
                                     }
 
                                 } while (menuModificar != 4);//fin while menu modificar
+                            }
+                            break;
+                            case 4: {
+                                System.out.println(registro);
+                                System.out.println("Que posicion quiere eliminar: ");
+                                int posicion = leer.nextInt();
+                                if (posicion < registro.size() && posicion >= 0) {
+                                    registro.remove(posicion);
+                                }
                             }
                             break;
                         }
@@ -204,9 +381,31 @@ public class Lab2P2_LisaDiazdelValle {
                 break;
 
                 case 2: {
+                    System.out.println("---MANEJO DE ESTADOS---");
+                    System.out.println(registro);
+                    System.out.println("Elija la posicion para asignarle un estado");
+                    int posicion = leer.nextInt();
+                    String estado;
+                    if (posicion >= 0 & posicion < registro.size()) {
+                        if (registro.get(posicion) instanceof casa && posicion >= 0 && posicion < registro.size()) {
+                            System.out.println("Ingrese el estado que desea asignarle [Lista, En Construccion, Construccion en espera, En espera de demolicion]: ");
+                            estado = leer.next();
+                            ((casa) registro.get(posicion)).setEstado(estado);
+                        } else if (registro.get(posicion) instanceof edificio && posicion >= 0 && posicion < registro.size()) {
+                            System.out.println("Ingrese el estado que desea asignarle [Lista, En Construccion, Construccion en espera, En espera de demolicion]: ");
+                            estado = leer.next();
+                            ((edificio) registro.get(posicion)).setEstado(estado);
+                        } else if (registro.get(posicion) instanceof solar && posicion >= 0 && posicion < registro.size()) {
+                            System.out.println("Ingrese el estado que desea asignarle [Lista, En Construccion, Construccion en espera, En espera de demolicion]: ");
+                            estado = leer.next();
+                            ((solar) registro.get(posicion)).setEstado(estado);
+
+                        }
+                    }
 
                 }
                 break;
+
                 case 3: {
                     String nombre = "";
                     int edad = 0;
@@ -239,8 +438,6 @@ public class Lab2P2_LisaDiazdelValle {
                                 username = leer.next();
                                 System.out.println("Cree un password: ");
                                 pass = leer.next();
-                                user.add(username);
-                                user.add(pass);
 
                             }
                             break;
@@ -251,8 +448,7 @@ public class Lab2P2_LisaDiazdelValle {
             }//fin del switch
 
         } // fin while
-        while (opcion
-                != 8);
+        while (opcion != 4);
     }//fin del main
 
     static casa newCasa() {

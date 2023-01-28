@@ -13,6 +13,8 @@ public class solar {
     private int largo;
     private int ancho;
     private int area;
+    private String dueno;
+    private String estado;
 
     public solar() {
 
@@ -48,9 +50,29 @@ public class solar {
         this.area = area;
     }
 
+    public String getDueno() {
+        return dueno;
+    }
+
+    public void setDueno(String dueno) {
+        this.dueno = dueno;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+    
+
     @Override
     public String toString() {
-        return "solar{" + "largo=" + largo + ", ancho=" + ancho + ", area=" + area + '}';
+        return "\nSOLAR" + "\n{largo=" + largo + ", ancho=" + ancho + ", area=" + area + ", dueno=" + dueno + ", estado=" +'}';
     }
+    
+
+    
 
 }

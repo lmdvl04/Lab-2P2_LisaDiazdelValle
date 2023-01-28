@@ -12,6 +12,8 @@ public class edificio {
     private int pisos;
     private int cantLocales;
     private String direccion;
+    private String estado;
+    private String dueno;
     
     public edificio (){
         
@@ -46,9 +48,26 @@ public class edificio {
         this.direccion = direccion;
     }
 
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    public String getDueno() {
+        return dueno;
+    }
+
+    public void setDueno(String dueno) {
+        this.dueno = dueno;
+    }
+    
+
     @Override
     public String toString() {
-        return "edificio{" + "pisos=" + pisos + ", cantLocales=" + cantLocales + ", direccion=" + direccion + '}';
+        return "\nEDIFICIO" + "\n{pisos=" + pisos + ", cantLocales=" + cantLocales + ", direccion=" + direccion + ", dueno=" + dueno + ", estado="+ estado+'}';
     }
     
     

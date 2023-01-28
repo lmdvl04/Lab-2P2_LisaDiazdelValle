@@ -18,6 +18,8 @@ public class casa {
     private int largo;
     private int banos;
     private int cuartos;
+    private String estado;
+    private String dueno;
     
     public casa(){
         
@@ -88,9 +90,26 @@ public class casa {
         this.cuartos = cuartos;
     }
 
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    public String getDueno() {
+        return dueno;
+    }
+
+    public void setDueno(String dueno) {
+        this.dueno = dueno;
+    }
+    
+
     @Override
     public String toString() {
-        return "casa{" + "numcasa=" + numcasa + ", bloque=" + bloque + ", color=" + color + ", ancho=" + ancho + ", largo=" + largo + ", banos=" + banos + ", cuartos=" + cuartos + '}';
+        return "\nCASA" + "\n {numero de casa=" + numcasa + ", bloque=" + bloque + ", color=" + color + ", ancho=" + ancho + ", largo=" + largo + ", banos=" + banos + ", cuartos=" + cuartos + ", Estado=" + estado+ ", Dueno+"+ '}';
     }
     
     
