@@ -376,7 +376,12 @@ public class Lab2P2_LisaDiazdelValle {
                             }
                             break;
                             case 5:{
-                               
+                                System.out.println(registro);
+                                System.out.println("Que posicion quiere comprar: ");
+                                int posicion = leer.nextInt();
+                                if (posicion < registro.size() && posicion >= 0) {
+                                    //registro.add(user.get());
+                                }
                                 
                             }
                         }
