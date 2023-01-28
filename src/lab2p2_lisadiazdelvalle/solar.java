@@ -69,7 +69,7 @@ public class solar {
 
     @Override
     public String toString() {
-        return "\nSOLAR" + "\n{largo=" + largo + ", ancho=" + ancho + ", area=" + area + ", dueno=" + dueno + ", estado=" +'}';
+        return "\nSOLAR" + "\n{largo=" + largo + ", ancho=" + ancho + ", area=" + area + ", dueno=" + dueno + ", estado=" + estado+'}';
     }
     
 

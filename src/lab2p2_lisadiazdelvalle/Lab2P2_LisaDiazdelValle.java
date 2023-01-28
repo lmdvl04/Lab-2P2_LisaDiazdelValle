@@ -375,6 +375,10 @@ public class Lab2P2_LisaDiazdelValle {
                                 }
                             }
                             break;
+                            case 5:{
+                               
+                                
+                            }
                         }
                     } while (op3 != 6); //fin while menu registro                    
                 }
@@ -407,11 +411,7 @@ public class Lab2P2_LisaDiazdelValle {
                 break;
 
                 case 3: {
-                    String nombre = "";
-                    int edad = 0;
-                    String username = "";
-                    String pass = "";
-                    Usuarios u = new Usuarios(nombre, edad, username, pass);
+
                     int op2 = 0;
                     do {
                         System.out.println("1. Ya tienes cuenta? Log in");
@@ -421,26 +421,37 @@ public class Lab2P2_LisaDiazdelValle {
                         op2 = leer.nextInt();
 
                         switch (op2) {
-                            case 1: {
+                               case 1: {
                                 System.out.println("Ingrese su user: ");
-                                username = leer.next();
+                                String username = leer.next();
                                 System.out.println("Ingrese su pass: ");
-                                pass = leer.next();
+                                String pass = leer.next();
+                                boolean Found = false;
+                                for (int i = 0; i < user.size(); i++) {
+                                    if (user.get(i).getUser().equals(username) && user.get(i).getContrasena().equals(pass)) {
+                                        Found = true;
+                                    }
+                                }
+
                             }
+
                             break;
 
                             case 2: {
                                 System.out.println("Ingrese su nombre: ");
-                                nombre = leer.next();
+                                String nombre = leer.next();
                                 System.out.println("Ingrese su edad: ");
-                                edad = leer.nextInt();
+                                int edad = leer.nextInt();
                                 System.out.println("Cree un  username: ");
-                                username = leer.next();
+                                String username = leer.next();
                                 System.out.println("Cree un password: ");
-                                pass = leer.next();
+                                String pass = leer.next();
+                                Usuarios u = new Usuarios(nombre, edad, username, pass);
 
+                                user.add(u);
                             }
                             break;
+                         
                         }
                     } //fin while menu de login
                     while (opcion != 3);
